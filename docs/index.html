@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack Overflow - 程式錯誤方塊遊戲</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <div class="main-panel">
+        <div>
+          <h1>🧱 程式錯誤方塊遊戲</h1>
+          <div class="subtitle">將錯誤模式對齊，先修正再避免堆疊溢位！</div>
+        </div>
+        <canvas id="gameCanvas" width="300" height="600"></canvas>
+      </div>
+
+      <div class="side-panel">
+        <div class="info-section">
+          <h3>分數</h3>
+          <div class="score" id="score">0</div>
+          <div class="status" id="status">遊戲中...</div>
+        </div>
+
+        <div class="info-section">
+          <h3>目標錯誤圖樣</h3>
+          <div class="pattern-preview">
+            <canvas id="patternCanvas" width="100" height="100"></canvas>
+            <div class="pattern-name" id="patternName">載入中...</div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h3>操作方式</h3>
+          <div class="controls">
+            <strong>←/→</strong> 移動<br />
+            <strong>↑</strong> 旋轉<br />
+            <strong>↓</strong> 快速下落<br />
+            <strong>Space</strong> 直接落下<br />
+            <strong>P</strong> 暫停
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-over" id="gameOver">
+      <h2>堆疊溢位！</h2>
+      <p>你的程式堆疊已達上限</p>
+      <p>最終分數：<span id="finalScore">0</span></p>
+      <button onclick="location.reload()">重新開始</button>
+    </div>
+
+    <script src="patterns.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
